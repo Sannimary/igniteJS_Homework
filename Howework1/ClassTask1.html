@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Task1</title>
+
+    
+    <script>
+        //Задача 1
+        //Мини-задача на синтаксис объектов. Напишите код, по строке на каждое действие.
+
+        //Создайте пустой объект user.
+        //Добавьте свойство name со значением Вася.
+        //Добавьте свойство surname со значением Петров.
+        //Поменяйте значение name на Сергей.
+        //Удалите свойство name из объекта. 
+      
+
+
+        var user = new Object();
+        user.name = "Vasya";
+        user.surname = "Petrov";
+        document.write("User =" + user.name + " " + user.surname + '<hr/>');
+
+        user.name = "Serg";
+
+        document.write("User =" + user.name + " " + user.surname + '<hr/>');
+
+        delete user.name;
+
+        document.write("User =" + user.name + " " + user.surname + '<hr/>');
+
+    
+    </script>
+</head>
+<body>
+
+    <input name="Name" type="hidden" value="HW"/>
+</body>
+</html>

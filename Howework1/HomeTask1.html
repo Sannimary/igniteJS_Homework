@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task1</title>
+	<meta charset="utf-8" />
+    <script>
+        //Задача 1.
+
+        //Создайте функцию find(arr, value), которая ищет в массиве arr значение value 
+        //и возвращает его номер, если найдено, или -1, если не найдено.
+
+
+        //вариант 1
+        var arr1 = [1, 59, 8, 9, 4, 6, 2, 5, 10, 50, 100];
+        document.write(arr1 + '<br/>');
+      
+        function find(arr, value) {
+           
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] === value)
+                    return i;
+            }
+            return -1;
+        }
+
+        var a = find(arr1, 4);
+        document.write(a + '<br/>');
+
+        //вариант 2
+        function find2(arr, value) {
+           return arr.indexOf(value);
+        }
+
+        var b = find2(arr1, 10);
+        document.write(b);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
