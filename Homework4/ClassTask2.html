@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task2</title>
+	<meta charset="utf-8" />
+
+    <script>
+        //Задача 2
+
+        //Перепишите с использованием встроенного метода bind:
+
+        //    function bind(func, context) {
+        //        return function() {
+        //            return func.apply(context, arguments);
+        //        };
+        //    }
+
+        //var user = {
+        //    firstName: "Вася",
+        //    sayHi: function() {
+        //        alert( this.firstName );
+        //    }
+        //}; 
+
+        //var f = bind(user.sayHi, user);  
+        //f(); 
+
+    
+
+        var user = {
+            firstName: "Вася",
+            sayHi: function () {
+                alert(this.firstName);
+            }
+        };
+
+        var f = user.sayHi.bind(user);
+        f();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
