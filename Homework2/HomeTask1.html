@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task1</title>
+	<meta charset="utf-8" />
+
+    <script>
+       
+        //Задача 1.
+
+        //Напишите функцию, которая принимает 1 параметр. При первом вызове она его запоминает, при втором - суммирует переданный параметр с параметром, переданным при предыдущем вызове.
+
+        //    Например:
+
+        //sum(3) = 3
+        //sum(5) = 8
+        //sum(228) = 236 
+
+        var b = 0;
+
+        function sum(a) {
+
+            return b = b + a;
+        }
+
+        document.write (sum(3)+'<br/>');
+        document.write (sum(5)+'<br/b>');
+        document.write(sum(228));
+
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

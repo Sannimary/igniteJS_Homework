@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task3</title>
+	<meta charset="utf-8" />
+
+
+    <script>
+
+
+       // Задача 3.
+
+       // Следующий код создает массив функций-стрелков shoooters. По замыслу, каждый стрелок должен выводить свой номер:
+
+       //     function makeArmy() {
+       //         var shooters = []; 
+
+       //         for (var i = 0; i< 10; i++) {
+       //             var shooter = function() { // функция-стрелок
+       //                 alert(i); // выводит свой номер
+       //             }; 
+       //             shooters.push(shooter); 
+       //         } 
+       //         return shooters; 
+       //     }
+       // var army = makeArmy(); 
+       // army[0](); // стрелок выводит 10, а должен 0
+       // army[5](); // стрелок выводит 10, а должен 5. 
+
+       // Сейчас все функции-стрелки выводят 10 вместо своего номера.
+       //Поправьте код, чтобы при вызове каждой из них она выводила свой номер(индекс в массиве). Предложите несколько вариантов.
+
+        function makeArmy() {
+            var shooters = [];
+
+            for (var i = 0; i < 10; i++) (function (i) {
+                var shooter = function () { 
+                    alert(i); 
+                };
+                shooters.push(shooter);
+            })(i);
+            return shooters;
+        }
+        var army = makeArmy();
+        army[0](); 
+        army[5](); 
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
