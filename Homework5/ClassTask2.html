@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task2</title>
+	<meta charset="utf-8" />
+    
+    <script>
+
+        //Задача 2
+
+        //Превратите объект leader из примера ниже в JSON:
+
+        //    var leader = {
+        //        name: "Василий Иванович",
+        //        age: 35
+        //    };
+        //После этого конвертируйте получившуюся строку обратно в объект.
+
+
+        var leader = {
+                   name: "Василий Иванович",
+                    age: 35
+                };
+
+        leaderJSON = JSON.stringify(leader);
+        document.write(leaderJSON + '<br/>');
+
+        leader2 = JSON.parse(leaderJSON);
+        document.write(leader2);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

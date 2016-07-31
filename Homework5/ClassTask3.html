@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task3</title>
+	<meta charset="utf-8" />
+ <script>
+
+     //Задача 3
+
+     //Напишите функцию, которая принимает один аргумент и возвращает его тип данных. 
+     //Выполните обработку исключений в случае передачи двух и больше аргументов.
+
+     function typeOfArg (arg) {
+
+         try {
+             if (arguments.length > 1) {
+                 throw new Error("Возможен только один параметр!");
+             }
+
+             return typeof arg;
+         }
+
+         catch (e) {
+             alert(e);
+         }
+     }
+
+     document.write(typeOfArg(5) + '<br/>');
+     document.write(typeOfArg(true) + '<br/>');
+     document.write(typeOfArg("type") + '<br/>');
+     document.write(typeOfArg([1, 5, 8]) + '<br/>');
+     document.write(typeOfArg({}) + '<br/>');
+     document.write(typeOfArg(10, 5) + '<br/>');
+     
+ </script>
+</head>
+<body>
+
+</body>
+</html>
