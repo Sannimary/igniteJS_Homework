@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task 1</title>
+	<meta charset="utf-8" />
+
+   
+        <!--Задача 1
+
+        Есть дерево из тегов ul и li.
+
+        Напишите код, который для каждого элемента li выведет:
+
+        Текст непосредственно в нём указанный (без подразделов).
+        Количество всех вложенных в него элементов li.-->
+
+
+
+   
+</head>
+<body>
+   
+     <ul>
+        <li>
+            Животные
+            <ul>
+                <li>
+                    Млекопитающие
+                    <ul>
+                        <li>Коровы</li>
+                        <li>Ослы</li>
+                        <li>Собаки</li>
+                        <li>Тигры</li>
+                    </ul>
+                </li>
+                <li>
+                    Другие
+                    <ul>
+                        <li>Змеи</li>
+                        <li>Птицы</li>
+                        <li>Ящерицы</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Рыбы
+            <ul>
+                <li>
+                    Аквариумные
+                    <ul>
+                        <li>Гуппи</li>
+                        <li>Скалярии</li>
+                    </ul>
+
+                </li>
+                <li>
+                    Морские
+                    <ul>
+                        <li>Морская форель</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+
+        var lis = document.getElementsByTagName('li');
+
+        for (i = 0; i < lis.length; i++) {
+            
+            var title = lis[i].firstChild.data;
+                     
+            var count = lis[i].getElementsByTagName('li').length;
+
+            alert(title + '=' + count);
+        }
+
+
+    </script>
+
+
+</body>
+</html>

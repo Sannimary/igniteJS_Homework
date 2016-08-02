@@ -2,12 +2,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Task2</title>
+    <title>Task 2</title>
 	<meta charset="utf-8" />
-
     <script>
-        //Задача 2
-
         //Напишите функцию runString, которая:
 
         //1)принимает 2 аргумента:
@@ -24,15 +21,25 @@
         //        func: 'return Math.sqrt(num)'  // функция, которая должна быть вызванв с  агрументом arg
         //    };
 
-        //runString(arg, obj)        
+        //runString(arg, obj)          
 
 
         function runString(arg, obj) {
-
-
+            var newFunc = new Function(obj.param, obj.func);
+            return newFunc(arg);
         }
 
+
+        var arg = 4,                       	   // аргумент для функции runString
+			obj = {
+			    param: 'num',                  // имя параметра для функции в свойстве func
+			    func: 'return Math.sqrt(num)'  // функция, которая должна быть вызвана с агрументом arg
+			};
+
+        alert(runString(arg, obj));
+
     </script>
+
 </head>
 <body>
 
