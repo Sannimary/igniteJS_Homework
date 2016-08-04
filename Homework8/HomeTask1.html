@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task 1</title>
+	<meta charset="utf-8" />
+    <!--Задача 1.
+
+    Создайте регистрационную форму: логин, пароль, телефон и кнопка "Отправить". 
+    По нажатию на кнопку "Отправить", проверьте корректность ввода данных с помощью JavaScript. 
+    1) Логин - не должен содержать цифры. 2) Пароль - не дожен содержать знак $. 
+    3) Телефон - должен содержать только цифры.
+
+    Закрасьте фон поля ввода в красный цвет, если были введены неправильные данные.-->
+    <style>
+
+        input {
+            display: block;
+            margin-bottom: 10px;            
+        }
+
+        .err {
+             background: red;
+        }
+    </style>
+
+</head>
+<body>
+    <form >
+        <input type="text" id='login' placeholder="Логин">
+        <input type="password" id='password' placeholder="Пароль">
+        <input type="tel" id='phone' placeholder="Телефон">
+        <input type="submit" id='button' value="Отправить">
+    </form>
+
+    <script>
+
+        var login = document.getElementById('login');
+        var pass = document.getElementById('password');
+        var phone = document.getElementById('phone');
+        var button = document.getElementById('button');
+
+        
+        function empty (el) {
+            if (el.value == '') {
+                el.classList.add('err');
+                return true;
+            };
+            return false;
+        };
+
+        function checkLogin(el) {
+            el.classList.remove('err');
+            if (empty(el) || (el.value.search(/\d/) !== -1)) {
+                el.classList.add('err');
+                return false;
+            }
+            return true;
+        }
+
+        function checkPass (el) {
+            el.classList.remove('err');
+            if (empty(el) || (el.value.search(/[$]/) !== -1)) {
+                element.classList.add('err');
+                return false;
+            }
+            return true;
+        }
+
+        function checkPhone (el) {
+            el.classList.remove('err');
+            if (empty(el) || (el.value.search(/\D/) !== -1)) {
+                el.classList.add('err');
+                return false;
+            }
+            return true;
+        }
+
+
+        button.onclick = function (event) {
+
+            if (!checkLogin(login) || !checkPass(pass) || !checkPhone(phone)) {
+                event.preventDefault();
+                alert('Проверьте данные!');
+            } else {
+                alert('Данные отправлены!');
+            }
+        }          
+
+    </script>
+
+</body>
+</html>

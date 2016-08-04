@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        a{
+			
+			height: 100px;
+			width: 100px;
+			background-color: red;
+           
+			
+		}
+
+		div{
+			height: 100px;
+			width: 100px;
+			background-color: blue;
+			}
+
+    </style>
+</head>
+<body>
+    <!--Задача 2.
+
+    Создайте функцию positionAt(anchor, position, elem), которая позиционирует элемент elem, в зависимости от значения аргумента position: 
+    сверху ("top"), справа ("right") или снизу ("bottom"). Функция должна проводить позиционирование относительно элемента anchor. 
+    Для решения данной задачи Вам понадобится создать элемент anchor (тег а) и elem (тег div).-->
+    
+    <a></a>
+    <div></div>
+    
+    
+    <script>
+               
+            function positionAt(anchor, position, elem) {
+
+
+            var anchorCoords = anchor.getBoundingClientRect();
+
+            switch (position) {
+                case "top":
+                    elem.style.left = anchorCoords.left + "px";
+                    elem.style.top = anchorCoords.top - elem.offsetHeight + "px";
+                    break;
+
+                case "right":
+                    elem.style.left = anchorCoords.left + anchor.offsetWidth + "px";
+                    elem.style.top = anchorCoords.top + "px";
+                    break;
+
+                case "bottom":
+                    elem.style.left = anchorCoords.left + "px";
+                    elem.style.top = anchorCoords.top + anchor.offsetHeight + "px";
+                    break;
+            }
+
+        }
+               
+            a = document.getElementsByTagName("a")[0];
+            div = document.getElementsByTagName("div")[0];
+            positionAt(a, "top", div);
+        
+    </script>
+
+   
+</body>
+</html>
