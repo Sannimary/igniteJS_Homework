@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task1</title>
+	<meta charset="utf-8" />
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+        }
+
+        #inner {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+        }
+
+        span {
+            background-color: yellow;
+        }
+    </style>
+
+    <!--Class Work
+
+    Задача 1.
+
+    Создайте страницу. Разместите на ней произвольное количеством элементов. 
+    Разработайте сценарий, который будет по очереди перемещать span с текстом и интервалом в 400мс:
+    1) Перед элементом. 2) Внутри элемента перед тектом 3) Внетри элемента после текста. 4) После элемента.-->
+
+</head>
+<body>
+    <div id="container">
+        <span>SPAN</span>
+        <div id="inner">Simple text</div>
+    </div>
+
+    <script>
+       
+        
+            var inner = document.getElementById("inner");
+            var count = 0;
+
+            function replace() {
+                count ++;
+
+                var span = document.getElementsByTagName("span")[0];
+                switch (count) {
+                    case 1:
+                        if (span != undefined) {
+                            span.parentNode.removeChild(span);
+                        }
+                        inner.insertAdjacentHTML("beforeBegin", span.outerHTML);
+                        break;
+                    case 2:
+                        span.parentNode.removeChild(span);
+                        inner.insertAdjacentHTML("afterBegin", span.outerHTML);
+                        break;
+                    case 3:
+                        inner.removeChild(span);
+                        inner.insertAdjacentHTML("beforeEnd", span.outerHTML);
+                        break;
+                    case 4:
+                        inner.removeChild(span);
+                        inner.insertAdjacentHTML("afterEnd", span.outerHTML);
+                        count = 0;
+                        break;
+                }
+            }
+
+            setInterval(replace, 400);
+        
+    </script>
+</body>
+</html>
