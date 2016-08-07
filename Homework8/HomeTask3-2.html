@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+ 
+
+        <input type="text" class="number" name="first_num" value="0">
+        <input type="text" class="number" name="second_num" value="0">
+
+        <div>
+            <button name="sum">+</button>
+            <button name="substract">-</button>
+            <button name="multiply">*</button>
+            <button name="divide">/</button>
+        </div>
+
+        <p>Результат</p>
+        <input type="text" class="result" name="result">
+   
+
+    <script>
+        
+        window.onload = function() {
+            function calculate(e) {
+                var value1 = +document.getElementsByName('first_num')[0].value;
+                var value2 = +document.getElementsByName('second_num')[0].value;
+                if (!isNumeric(value1) || !isNumeric(value2)) {
+                    return alert('Введите числа!');
+                }
+                var operation = e.target.name;
+                var res = 0;
+                switch (operation) {
+                    case 'sum':
+                        res = (value1 + value2);
+                        break;
+                    case 'substract':
+                        res = (value1 - value2);
+                        break;
+                    case 'multiply':
+                        res = (value1 * value2);
+                        break;
+                    case 'divide': {
+                        if (value2 === 0) return alert('Деление на ноль!');
+                        res = (value1 / value2).toFixed(3);
+                        break;
+                    }
+                };
+                var result = document.getElementsByName('result')[0];
+                result.value = res;
+            };
+            function isNumeric(arg) {
+                return !isNaN(arg) && isFinite(arg);
+            };
+            var button = document.getElementsByTagName('button');
+            for (var i = 0; i < button.length; i++) {
+                button[i].addEventListener('click', calculate);
+            }
+        }
+        </script>
+</body>
+</html>

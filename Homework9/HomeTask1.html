@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Task 1</title>
+	<meta charset="utf-8" />
+
+    <!--Задача 1.
+
+    Сделайте список, элементы которого можно выделять кликом. 
+    Используйте для решения данной задачи свойство e.target.-->
+
+    <style>
+        .selected {
+            background-color: pink;
+        }
+
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Строка 1</li>
+        <li>Строка 2</li>
+        <li>Строка 3</li>
+        <li>Строка 4</li>
+        <li>Строка 5</li>
+        <li>Строка 6</li>
+        <li>Строка 7</li>
+        <li>Строка 8</li>
+        <li>Строка 9</li>
+        <li>Строка 10</li>
+    </ul>
+
+    <script>
+
+      
+            var li = document.getElementsByTagName('li');
+            var lastSelectedLi = null;
+            for (var i = 0; i < li.length; i++) {
+                li[i].addEventListener('click', selectLi);
+                li[i].addEventListener('mousedown', cancelTextSelect);
+            }
+            function selectLi(e) {
+                if (e.target.tagName != "LI") return false;
+                if (lastSelectedLi) lastSelectedLi.classList.remove('selected');
+                e.target.classList.add('selected');
+                lastSelectedLi = e.target;
+            }
+            function cancelTextSelect(e) {
+                e.preventDefault();
+            }
+
+    </script>
+
+</body>
+</html>
